@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <div class="form">
+        <h3>Update Employee Detail</h3>
+
+        <div class="form-inputs">
+            <label>Enter Employee Name</label>
+            <input [(ngModel)]='empName' placeholder="type employee name here" type="'text" />
+        </div>
+        <div class="form-inputs">
+            <label>Enter Employee Age</label>
+            <input [(ngModel)]='empAge' placeholder="type employee age here" type="'text" />
+        </div>
+        <div class="form-inputs">
+            <label>Enter Employee Number</label>
+            <input [(ngModel)]='empPhone' placeholder="type phone number here" type="'text" />
+        </div>
+        <button (click)="submit()">submit</button>
+    </div>
+</div>

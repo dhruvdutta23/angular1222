@@ -1,0 +1,118 @@
+h4 {
+  margin-bottom: 40px;
+
+}
+
+p {
+  color: red;
+  font-size: 13px;
+  font-family: sans-serif;
+  margin-left: 4px;
+  margin-top: 5.5px;
+  text-transform: capitalize;
+}
+
+.ng-invalid   {
+  border: 2px solid red;
+}
+.ng-untouched {
+  border: 2px solid rgb(127, 233, 247) !important;
+
+}
+
+
+form {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 19px;
+  position: relative;
+
+}
+
+.label {
+  display: block;
+  color: rgba(184, 181, 181, 0.839);
+}
+
+input {
+  width: 60%;
+  height: 45px;
+  padding: 10px;
+  outline-color: rgb(127, 233, 247);
+  border: 1px solid rgb(127, 233, 247);
+  border-radius: 7px;
+  display: block;
+  margin-top: 3px;
+
+  @media only screen and (max-width: 600px) {
+    width: 95%;
+    height: 45px;
+
+  }
+}
+
+h2 {
+  margin-bottom: 49px;
+
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 39px;
+
+  }
+}
+
+.copyright-div {
+  position: absolute;
+  bottom: 29px;
+  right: 34%;
+  @media only screen and (max-width: 600px) {
+    bottom: 39px;
+    right: 17%;
+  }
+}
+
+button {
+  background-color: rgb(127, 233, 247);
+  padding: 5px;
+  border-radius: 4px;
+  width: 89px;
+  margin-bottom: 15px;
+  margin-top: 9px;
+  border: 0px;
+
+  &:hover  {
+    cursor: pointer;
+    box-shadow: 2px 2px 2px rgb(83, 84, 84);
+  }
+}
+.loader {
+  z-index: 121;
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  width: 80px;
+}
+
+.loader img {
+  width: 90px;
+}
+
+#loginlink {
+  text-decoration: underline;
+  color: rgb(127, 233, 247);
+  &:hover {
+    cursor: pointer;
+    text-decoration-color: rgb(127, 233, 247);
+    text-decoration-thickness: 2px;
+    color: rgb(83, 84, 84);
+}
+
+  ;
+  display: inline-block;
+  margin-left: 6px;
+  @media only screen and (max-width: 600px) {
+    display: block;
+    margin-left: 0px;
+
+  }
+}

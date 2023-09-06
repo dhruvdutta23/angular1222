@@ -1,0 +1,36 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="header">
+        <h2>Welcome to Angular poc</h2>
+    </div>
+    <div class="mb-4" style="display: flex; width:100%; ">
+        <div>
+            <label>Email address</label>
+            <p style="color:green">dhruba@gmail.com</p>
+        </div>
+        <div  style="margin-left: 60px ">
+            <label>Password</label>
+            <p style="color:green">12345</p>
+        </div>
+
+    </div>
+    <div class="mb-4">
+        <label>Email address</label>
+        <input id="email" formControlName="email" type="email" placeholder="name@example.com">
+        <p *ngIf="loginForm.get('email').touched && !loginForm.get('email').value">Please enter your email
+        </p>
+        <p *ngIf="loginForm.get('email').value && loginForm.get('email').status=='INVALID'">Please enter a
+            valid email</p>
+    </div>
+    <div class="mb-4">
+        <label>Password</label>
+        <input id="password" formControlName="password" type="password" placeholder="enter password">
+        <p *ngIf="loginForm.get('password').touched && !loginForm.get('password').value">please enter a
+            password</p>
+        <p *ngIf="loginForm.get('password').value && loginForm.get('password').status=='INVALID'">please
+            enter atleast 5 length password</p>
+    </div>
+    <button [disabled]="loginForm.status=='INVALID'" type="submit">Login</button>
+    <h6>Have not registered?<span id="loginlink"> <a (click)="onRegisterClick()">Click here to Register</a></span> </h6>
+    <div class="copyright-div">Copyright © 2023 Dhruba Dutta</div>
+    <app-toast-comp></app-toast-comp>
+</form>

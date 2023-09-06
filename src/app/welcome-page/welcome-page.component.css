@@ -1,0 +1,29 @@
+#poster {
+  width: 100%;
+  height: 100vh;
+  object-fit:cover;
+
+  @media only screen and (max-width: 600px) {
+    object-fit: cover;
+
+  }
+}
+
+#welcome-screen {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+
+  }
+}
+
+
+#form {
+  padding: 40px;
+  @media only screen and (max-width: 600px) {
+    padding: 20px;
+    height:100vh
+  }
+}

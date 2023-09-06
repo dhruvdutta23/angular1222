@@ -1,0 +1,9 @@
+<div id="welcome-screen">
+    <div id="posterContainer">
+        <img id="poster" src="../../assets/pexels-fauxels-3184360.jpg" />
+    </div>
+    <div id="form">
+        <app-registerage *ngIf="!employeeService.showLoginPage"></app-registerage>
+        <app-login-page  *ngIf="employeeService.showLoginPage"></app-login-page>
+    </div>
+</div>

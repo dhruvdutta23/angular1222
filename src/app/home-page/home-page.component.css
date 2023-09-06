@@ -1,0 +1,44 @@
+#poster {
+    width: 100%;
+    height: 94.5vh;
+    object-fit: cover;
+    object-position: 1% 1%;
+    @media only screen and (max-width: 600px) {
+        height: 94.2vh;
+
+    }
+}
+
+.wrapper {
+    position: relative;
+    margin-top: 40px;
+    @media only screen and (max-width: 600px) {
+        margin-top: 50px;
+
+    }
+
+}
+
+h6 {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    text-decoration: underline;
+    font-size: 220%;
+    font-style: sans seriff;
+    color: rgba(78, 77, 77, 0.839);
+
+    &:hover {
+        cursor: pointer;
+        text-decoration-color: rgb(127, 233, 247);
+        color: rgb(83, 84, 84);
+    }
+
+    @media only screen and (max-width: 600px) {
+        text-decoration-color: rgb(127, 233, 247);
+        color: rgb(83, 84, 84);
+        top: 10%;
+        left: 10%;
+        font-size: 220%;
+    }
+}
