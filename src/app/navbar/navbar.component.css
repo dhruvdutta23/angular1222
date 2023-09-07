@@ -30,6 +30,9 @@ g:hover {
     overflow: hidden;
     background-color: rgb(127, 233, 247);
     transition: overflow .9s ease-in-out;
+    /* position: fixed;
+    width: 100%;
+    top:0px */
 }
 
 .topnav a {

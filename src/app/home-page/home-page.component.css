@@ -8,7 +8,9 @@
 
     }
 }
-
+/* #posterContainer{
+    height: 70vh;
+} */
 .wrapper {
     position: relative;
     @media only screen and (max-width: 600px) {

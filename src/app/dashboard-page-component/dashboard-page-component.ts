@@ -22,7 +22,7 @@ export class DashboardPageComponent implements OnInit {
   errorMsg = '';
   employees: IEmployee[] = [];
   temp: IEmployee[] = [];
-  filteredEmployees = [...this.employees];
+  filteredEmployees: IEmployee[] = [];
   constructor(private router: Router,
     private toastService: ToastService,
     private btnClickSuccessSound: btnClickSuccessSound,
@@ -33,7 +33,9 @@ export class DashboardPageComponent implements OnInit {
     this.isLoading = true;
     this.http.get('https://dummy.restapiexample.com/api/v1/employees').pipe().subscribe(
       (res: any) => {
-        this.employees = [...res.data]; this.isLoading = false;
+        this.employees = [...res.data];
+        this.filteredEmployees = [...this.employees];
+        this.isLoading = false;
       },
       error => { this.isLoading = false; this.toastService.showToast(error.message, { backgroundColor: 'red' }) }
 
@@ -77,13 +79,13 @@ export class DashboardPageComponent implements OnInit {
             error => { this.isLoading = false; this.toastService.showToast(error.message, { backgroundColor: 'red' }) }
           );
         },
-        error => this.toastService.showToast(error.message, { backgroundColor: 'red' })
+        error => { this.isDeleteClicked = false; this.toastService.showToast(error.message, { backgroundColor: 'red' }) }
 
       )
     }
 
   }
-  openEmployeeForm(){
+  openEmployeeForm() {
     this.btnClickSuccessSound.playAudio()
     this.empSerice.toggleForm();
   }

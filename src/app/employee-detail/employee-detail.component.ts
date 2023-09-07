@@ -21,17 +21,21 @@ export class EmployeeDetailComponent {
   empAge = '';
   empSal = '';
   empId = '';
+  isLoading = false;
   ngOnInit() {
+    this.isLoading = true;
     this.route.params.subscribe((res: any) => {
       this.http.get('https://dummy.restapiexample.com/api/v1/employees').subscribe(
         (res: any) => {
-          const emp = res.data.find((emp: IEmployee) => emp.id === res.id);
+          this.isLoading = false;
+          const emp = res.data.find((emp: IEmployee) => emp.id == res.id);
           this.empName = emp?.employee_name as string;
           this.empAge = emp?.employee_age as string;
           this.empSal = emp?.employee_salary as string;
         },
         error => {
-          this.toastService.showToast(error.message, { backgroundColor: 'red' })
+          this.toastService.showToast(error.message, { backgroundColor: 'red' });
+          this.isLoading = false;
         }
 
       );

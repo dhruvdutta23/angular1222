@@ -113,19 +113,24 @@ h2 {
   width: 90px;
 }
 
+h6{
+  margin-top: 10px;
+}
 #loginlink {
   text-decoration: underline;
-  color: rgb(127, 233, 247);
+  color: rgb(83, 84, 84);
+  text-decoration-color: rgb(127, 233, 247);
+  text-decoration-thickness: 2px;
+
   &:hover {
     cursor: pointer;
-    text-decoration-color: rgb(127, 233, 247);
-    text-decoration-thickness: 2px;
-    color: rgb(83, 84, 84);
-}
+
+  }
 
   ;
   display: inline-block;
   margin-left: 6px;
+
   @media only screen and (max-width: 600px) {
     display: block;
     margin-left: 0px;
