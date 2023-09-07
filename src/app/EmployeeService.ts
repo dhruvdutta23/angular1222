@@ -7,6 +7,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 export class EmployeeService {
   showLoginPage = false;
   empCred = {};
+  showFormState= false;
   userLoggedInState = new BehaviorSubject<boolean>(sessionStorage.getItem('userLoggedIn') == 'Y' ? true : false);
 
   constructor() { }
@@ -19,5 +20,8 @@ export class EmployeeService {
   storeEmpCred(empCred: any) {
     this.empCred = empCred;
     console.log(this.empCred)
+  }
+  toggleForm(){
+    this.showFormState=!this.showFormState;
   }
 }

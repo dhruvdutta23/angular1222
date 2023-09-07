@@ -21,9 +21,9 @@
 
 
 #form {
-  padding: 40px;
+  padding: 65px;
   @media only screen and (max-width: 600px) {
-    padding: 20px;
+    padding:0px;
     height:100vh
   }
 }

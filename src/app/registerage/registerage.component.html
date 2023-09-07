@@ -9,10 +9,6 @@
         <div class="loader" *ngIf="showLoader">
             <img src="../../assets/loader.svg" />
         </div>
-        <!-- <p *ngIf="!emailTaken  && emailTaken!=null && registrationForm.get('email').status!='INVALID'" style="color:green;">email available</p>
-        <p *ngIf="emailTaken && email && registrationForm.get('email').status!='INVALID'" style="color:red;">email
-            already taken</p> -->
-
         <p *ngIf="registrationForm.get('email').touched && !registrationForm.get('email').value">Please enter your email
         </p>
         <p *ngIf="registrationForm.get('email').value && registrationForm.get('email').status=='INVALID'">Please enter a
@@ -27,15 +23,6 @@
         </p>
     </div>
     <div class="mb-4">
-        <label>Age</label>
-        <input id="email" formControlName="age" type="range" min="25" max="60"
-           />
-       
-
-        <p *ngIf="registrationForm.get('age').touched && !registrationForm.get('age').value">Please enter your age
-        </p>
-    </div>
-    <div class="mb-4">
         <label>Password</label>
         <input id="password" formControlName="password" type="password" placeholder="enter password"/>
         <p *ngIf="registrationForm.get('password').touched && !registrationForm.get('password').value">please enter a
@@ -43,7 +30,7 @@
         <p *ngIf="registrationForm.get('password').value && registrationForm.get('password').status=='INVALID'">please
             enter atleast 5 length password</p>
     </div>
-    <button [disabled]="registrationForm.status=='INVALID'" type="submit">Register</button>
+    <button [ngClass]="registrationForm.status=='INVALID' ? 'btnClassDisabled' :'btnClassEnabled'" [disabled]="registrationForm.status=='INVALID'" type="submit">Register</button>
     <h6>Already registered?<span id="loginlink"> <a (click)="onLoginClick()">Click here to Login</a></span> </h6>
     <div class="copyright-div">Copyright © 2023 Dhruba Dutta</div>
 </form>

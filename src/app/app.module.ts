@@ -15,6 +15,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastCompComponent } from './toast-comp/toast-comp.component';
+import { btnClickFailSound, btnClickSuccessSound } from 'src/utility';
+import { HttpClientModule  } from '@angular/common/http';
+import { EmpAddFormComponent } from './emp-add-form/emp-add-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,16 +30,18 @@ import { ToastCompComponent } from './toast-comp/toast-comp.component';
     EmployeeDetailComponent,
     NotFoundComponent,
     HomePageComponent,
-    ToastCompComponent
+    ToastCompComponent,
+    EmpAddFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule 
   ],
-  providers: [],
+  providers: [btnClickSuccessSound,btnClickFailSound],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

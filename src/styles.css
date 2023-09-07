@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-body{
+body {
     background-color: rgba(184, 181, 181, 0.839);
+
     ::-webkit-scrollbar {
         width: 0px;
     }
+
+  
 }

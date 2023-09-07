@@ -1,7 +1,10 @@
 <div class="homePage-container">
     <div class="search-bar">
         <input [disabled]="isDeleteClicked" (keyup)="onSearch($event)" type="search"
-            placeholder="Search for an employee......" />
+            placeholder="Type an employee name......" />
+            <div (click)="openEmployeeForm()">
+                <img src="../../assets/addUserIcon.png"/>
+            </div>
     </div>
     <div class="courses-container">
         <div class="course-card" *ngFor="let emp of filteredEmployees;index as i" (mouseover)="hoverInCard($event)"
@@ -9,14 +12,14 @@
             <div class="course-header"></div>
 
             <div class="course-content" [id]="i">
-                <h4>{{emp.name}}</h4>
+                <h4>{{emp.employee_name}}</h4>
                 <div class="course-content-para">
                     <label>Age: </label>
-                    <h6>{{emp.age}}</h6>
+                    <h6>{{emp.employee_age}}</h6>
                 </div>
                 <div class="course-content-para">
-                    <label>Phone:</label>
-                    <h6>{{emp.phone}}</h6>
+                    <label>Salary:</label>
+                    <h6>{{emp.employee_salary}}</h6>
                 </div>
                 <div class="icons-desktop-view" (mouseover)="hoverInIcons()"
                     [ngClass]="selectedCardId===i? 'card-buttons-visible' : 'card-buttons-hidden'">
@@ -57,6 +60,8 @@
             <h3> No employee Found</h3>
         </div>
     </div>
-
+    <div class="loading-emp-spinner" *ngIf="isLoading">
+        <img src="../../assets/spinner.svg" />
+    </div>
+    <app-emp-add-form *ngIf="empSerice.showFormState"></app-emp-add-form>
 </div>
-<app-toast-comp></app-toast-comp>

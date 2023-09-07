@@ -1,6 +1,6 @@
 <div class="wrapper">
     <div class="form">
-        <h3>Update Employee Detail</h3>
+        <h3>Add new Employee </h3>
 
         <div class="form-inputs">
             <label>Enter Employee Name</label>
@@ -15,9 +15,10 @@
             <input [(ngModel)]='empSal' placeholder="type phone number here" type="'text" />
         </div>
         <div class="btn-div">
-            <button routerLink="/dashboard">Back</button>
-            <button (click)="submit()">Submit</button>
+            <button  (click)="onClose()" style="background-color: red; color:white" (click)="submit()">Close</button>
+            <button  (click)="submit()">Submit</button>
 
         </div>
+
     </div>
 </div>

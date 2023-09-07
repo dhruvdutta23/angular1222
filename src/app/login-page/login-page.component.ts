@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EmployeeService } from '../EmployeeService';
 import { ToastService } from '../toast.service';
+import { btnClickSuccessSound ,btnClickFailSound} from 'src/utility';
 
 @Component({
   selector: 'app-login-page',
@@ -11,7 +12,11 @@ import { ToastService } from '../toast.service';
 })
 export class LoginPageComponent {
   loginForm: any;
-  constructor(private router: Router, private employeeService: EmployeeService, private toastService: ToastService) { }
+  constructor(private router: Router,
+    private btnClickSuccessSound: btnClickSuccessSound,
+    private btnClickFailSound:  btnClickFailSound,
+    private employeeService: EmployeeService,
+    private toastService: ToastService) { }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
@@ -23,12 +28,14 @@ export class LoginPageComponent {
   onSubmit() {
     const { email, password } = this.loginForm.value;
     if (email === 'dhruba@gmail.com' && password == 12345) {
+      this.btnClickSuccessSound.playAudio()
       this.router.navigateByUrl('/home');
-      this.toastService.showToast("Login Success", { backgroundColor: 'light-green', color: 'white' });
+      this.toastService.showToast("Login Success", { backgroundColor: 'green', color: 'white' });
       this.employeeService.userLoggedInState.next(true);
       sessionStorage.setItem('userLoggedIn', 'Y');
     }
     else {
+     this.btnClickFailSound.playAudio()
       this.toastService.showToast("Invalid Credentials", { backgroundColor: 'red', color: 'white' });
       this.loginForm.reset();
     }

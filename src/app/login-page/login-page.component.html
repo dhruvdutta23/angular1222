@@ -5,11 +5,11 @@
     <div class="mb-4" style="display: flex; width:100%; ">
         <div>
             <label>Email address</label>
-            <p style="color:green">dhruba@gmail.com</p>
+            <p style="color:green; text-transform: none;">dhruba@gmail.com</p>
         </div>
-        <div  style="margin-left: 60px ">
+        <div style="margin-left: 60px ">
             <label>Password</label>
-            <p style="color:green">12345</p>
+            <p style="color:green; text-transform: none">12345</p>
         </div>
 
     </div>
@@ -29,8 +29,8 @@
         <p *ngIf="loginForm.get('password').value && loginForm.get('password').status=='INVALID'">please
             enter atleast 5 length password</p>
     </div>
-    <button [disabled]="loginForm.status=='INVALID'" type="submit">Login</button>
+    <button [ngClass]="loginForm.status=='INVALID' ? 'btnClassDisabled' :'btnClassEnabled'" [disabled]="loginForm.status=='INVALID'"
+        type="submit">Login</button>
     <h6>Have not registered?<span id="loginlink"> <a (click)="onRegisterClick()">Click here to Register</a></span> </h6>
     <div class="copyright-div">Copyright © 2023 Dhruba Dutta</div>
-    <app-toast-comp></app-toast-comp>
 </form>
